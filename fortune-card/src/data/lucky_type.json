@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "wheel_of_name"
+  },
+  {
+    "id": 2,
+    "name": "lottery"
+  },
+  {
+    "id": 3,
+    "name": "scratch_card"
+  },
+  {
+    "id": 4,
+    "name": "coin"
+  }
+]
