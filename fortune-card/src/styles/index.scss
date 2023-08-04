@@ -1,11 +1,9 @@
-
-
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter.ttf');
+  font-family: "Inter";
+  src: url("../fonts/Inter.ttf");
 }
 
-@import 'variables';
-@import 'scaffolding';
-@import 'card'
-
+@import "variables";
+@import "scaffolding";
+@import "card";
+@import "modal";

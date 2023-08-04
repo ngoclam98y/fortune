@@ -24,8 +24,10 @@
     margin: 2px;
 
     img {
-      width: calc(clamp(0.5rem, 3vw + 1.1rem, 5rem));
-      height: calc(clamp(0.5rem, 3vw + 1.1rem, 5rem));
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
       object-fit: cover;
     }
 
