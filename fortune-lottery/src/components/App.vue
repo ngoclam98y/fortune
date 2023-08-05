@@ -58,7 +58,8 @@ let prizeData;
 let isSpinning;
 
 export const handleSubmitClaimReward = async (dataReward, cb) => {
-  const response = await fetch("url", {
+  let data_url = location.origin + "/minigame_information.php";
+  const response = await fetch(data_url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

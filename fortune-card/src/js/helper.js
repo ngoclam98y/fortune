@@ -1,10 +1,12 @@
-import dataReward from "../data/reward.json";
+// import dataReward from "../data/reward.json";
 export async function getDataReward({
   user_id,
   lucky_type_id,
   reward_type_id,
 }) {
-  // const dataReward = await fetch("https://social.lcnk.net/minigame/data/card.json").then((res) => res.json());
+  const dataReward = await fetch(
+    "https://social.lcnk.net/minigame/data/card.json"
+  ).then((res) => res.json());
 
   return dataReward.filter((e) => {
     return (

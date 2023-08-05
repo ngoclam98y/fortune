@@ -61,15 +61,21 @@ import SpinOff from "../images/spin_off.png";
 const DIMENSION = 495;
 
 export const handleSubmitClaimReward = async (dataReward, cb) => {
-  const response = await fetch("url", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(dataReward),
-  });
-  cb();
-  return response.json();
+  let data_url = location.origin + "/minigame_information.php";
+  try {
+    const response = await fetch(data_url, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataReward),
+    });
+    cb();
+    return response.json();
+  } catch (error) {
+    console.log(error, "=========");
+  }
 };
 
 export const onLoadScratchCard = (dataReward) => {
