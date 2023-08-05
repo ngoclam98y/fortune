@@ -58,7 +58,7 @@ import randomcolor from "randomcolor";
 import TickMp3 from "../sounds/tick.mp3";
 import SpinOff from "../images/spin_off.png";
 import { select } from "../js/helper";
-// import dataReward from "../data/reward.json";
+import dataReward from "../data/reward.json";
 import { OnOpenModal } from "../js/modal";
 let spinButton;
 let resetButton;
@@ -230,9 +230,9 @@ export default {
   async mounted() {
     const user_id = this.$route.query.jwt ?? 1;
     const url = location.origin;
-    const dataReward = await fetch(url + "/minigame/data/wheel.json").then(
-      (res) => res.json()
-    );
+    // const dataReward = await fetch(url + "/minigame/data/wheel.json").then(
+    //   (res) => res.json()
+    // );
     const getDataReward = ({ user_id, lucky_type_id, reward_type_id }) => {
       return dataReward.filter((e) => {
         return (
