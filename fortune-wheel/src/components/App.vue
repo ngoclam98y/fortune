@@ -229,9 +229,10 @@ export default {
   },
   async mounted() {
     const user_id = this.$route.query.jwt ?? 1;
-    const dataReward = await fetch(
-      "https://social.lcnk.net/minigame/data/wheel.json"
-    ).then((res) => res.json());
+    const url = location.origin;
+    const dataReward = await fetch(url + "/minigame/data/wheel.json").then(
+      (res) => res.json()
+    );
     const getDataReward = ({ user_id, lucky_type_id, reward_type_id }) => {
       return dataReward.filter((e) => {
         return (
