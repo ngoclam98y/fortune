@@ -35,8 +35,6 @@
         <canvas
           class="canvas"
           id="js-canvas"
-          width="500px"
-          height="500px"
         ></canvas>
         <form
           class="form"
@@ -221,7 +219,29 @@ export default {
       claimRewardData: null,
     };
   },
+  destroyed() {
+    window.removeEventListener("resize", this.myEventHandler);
+  },
   methods: {
+    myEventHandler() {
+      const $_id = document.getElementById.bind(document);
+      let width = window.innerWidth;
+
+      if (width <= 500) {
+        $_id("js-canvas").setAttribute("width", width + "px");
+        $_id("js-canvas").setAttribute("height", width + "px");
+
+        $_id("js-container").style.width = width + "px";
+        $_id("js-container").style.height = width + "px";
+      } else {
+        width = 500;
+        $_id("js-canvas").setAttribute("width", width + "px");
+        $_id("js-canvas").setAttribute("height", width + "px");
+
+        $_id("js-container").style.width = width + "px";
+        $_id("js-container").style.height = width + "px";
+      }
+    },
     onClaimReward() {
       console.log("Claim reward");
       handleSubmitClaimReward(this.claimRewardData[0] || {}, function () {
@@ -230,6 +250,7 @@ export default {
     },
   },
   async mounted() {
+    this.myEventHandler();
     const user_id = this.$route.query.jwt ?? 1;
     const data = await getDataReward({
       user_id, //+getJwtToken(),
